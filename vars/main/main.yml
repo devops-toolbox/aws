@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+aws_repos_create: "{{ _aws_repos_create['all']
+  | union ( _aws_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+aws_repos_download: "{{ _aws_repos_download['all']
+  | union ( _aws_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+aws_templates_copy: "{{ _aws_templates_copy['all']
+  | union ( _aws_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+aws_services_enable: "{{ _aws_services_enable['all']
+  | union ( _aws_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+aws_selinux_enable: "{{ _aws_selinux_enable['all']
+  | union ( _aws_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+aws_packages_remove: "{{ _aws_packages_remove['all']
+  | union ( _aws_packages_remove[my_os]
+  | default([]) ) }}"
+aws_packages_repos: "{{ _aws_packages_repos['all']
+  | union ( _aws_packages_repos[my_os]
+  | default([]) ) }}"
+aws_packages_prereq: "{{ _aws_packages_prereq['all']
+  | union ( _aws_packages_prereq[my_os]
+  | default([]) ) }}"
+aws_packages_install: "{{ _aws_packages_install['all']
+  | union ( _aws_packages_install[my_os]
+  | default([]) ) }}"
