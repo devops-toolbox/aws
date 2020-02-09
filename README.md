@@ -8,10 +8,10 @@ aws: Aws
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.aws](https://galaxy.ansible.com/devops-toolbox.aws)
+[https://galaxy.ansible.com/devopstoolbox.aws](https://galaxy.ansible.com/devopstoolbox.aws)
 
 ```bash
-ansible-galaxy install devops-toolbox.aws
+ansible-galaxy install devopstoolbox.aws
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: aws is configured
       import_role:
-        name: devops-toolbox.aws
+        name: devopstoolbox.aws
       vars:
         aws_packages_state: present
         aws_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
